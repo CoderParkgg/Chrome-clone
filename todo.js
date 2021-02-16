@@ -9,7 +9,7 @@ let toDos = [];
 function deleteToDo(event){
     const btn = event.target;
     const li = btn.parentNode; //부모 태그를 가져온다. 
-    toDoList.removeChild(li);
+    toDoList.removeChild(li); //부모 태그 안에 있는 파라미터로 받은 자손 태그를 지운다.
     const cleanToDos = toDos.filter(function(toDos){ //filter은 배열의 모든 아이텀을 통해 함수를 실행하고 true인 아이템들만 가지고 새로운 배열을 만든다.
         return toDos.id !== parseInt(li.id); //정수형으로 형변환
     }); 
@@ -66,7 +66,7 @@ function loadToDos(){
 
 function init(){
     loadToDos();
-    toDoForm.addEventListener("submit", handleSubmit);
+    toDoForm.addEventListener("submit", handleSubmit);//(주의)input이 아닌 form에 만들어야 한다!
 }
 
 init();
