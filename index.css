@@ -14,6 +14,10 @@ body:nth-child(n) {
 h1 {
   color: #2d3436;
 }
+h4 {
+  font-size: 24px;
+  margin-bottom: 0px;
+}
 
 .form,
 .greetings {
@@ -55,7 +59,7 @@ h1 {
 input {
   border: none;
   padding: 10px;
-  width: 35%;
+  width: 40%;
   background-color: transparent;
   border-bottom: 1px solid black;
   margin-bottom: 15px;
@@ -110,4 +114,103 @@ button {
   top: 10px;
   color: #2d3436;
   font-size: 19px;
+}
+.btn {
+  width: 50px;
+}
+.input {
+  width: 35%;
+}
+.btn:focus,
+.input:focus {
+  animation: fade-in 0.2s linear forwards;
+}
+@keyframes fade-in {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: rgba(250, 250, 250, 0.2);
+  }
+}
+.iconBox {
+  position: absolute;
+  bottom: 40px;
+  right: 70px;
+  display: flex;
+  background-color: rgb(99, 110, 114);
+  justify-content: space-around;
+  align-items: center;
+  height: 50px;
+  border-radius: 23px;
+  padding-right: 60px;
+  padding-left: 5px;
+}
+.listDisappera {
+  z-index: -3;
+}
+.listAppear {
+  animation: appear 0.2s linear forwards;
+}
+@keyframes appear {
+  0% {
+    z-index: -3;
+    opacity: 0;
+  }
+  10% {
+    z-index: 1;
+    opacity: 0;
+  }
+  45% {
+    opacity: 0.3;
+    z-index: 1;
+  }
+  100% {
+    opacity: 1;
+    z-index: 1;
+  }
+}
+.icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #778ca3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px;
+}
+.iconDoor {
+  position: absolute;
+  bottom: 45px;
+  right: 70px;
+  width: 40px;
+  margin: 0 10px;
+  height: 40px;
+  border-radius: 45%;
+  background-color: #636e72;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+.iconDoor:hover {
+  animation: turn 0.5s ease-in forwards;
+}
+@keyframes turn {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(130deg);
+  }
+}
+button {
+  outline: none;
+}
+.icon i {
+  color: #2d3436;
+}
+a:visited {
+  color: none;
 }
