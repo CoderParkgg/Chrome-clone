@@ -1,6 +1,6 @@
 const body = document.querySelector("body");
 
-const IMG_NUMBER = 4;
+const IMG_NUMBER = 5;
 
 function showBg(event){
     const image = document.querySelector("img");

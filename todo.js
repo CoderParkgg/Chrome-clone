@@ -32,6 +32,7 @@ function paintToDo(text){
     delBtn.innerText = "❌";
     delBtn.addEventListener("click", deleteToDo);
     span.innerText = text;
+    span.classList.add("text");
     li.appendChild(delBtn);
     li.appendChild(span); //li가 부모태그가 되고 그 안에 argument로 받은 값을 넣는다.
     li.id = newId;

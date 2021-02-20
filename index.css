@@ -1,10 +1,12 @@
 body {
   background-color: #636e72;
   display: flex;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
   justify-content: center;
+  text-align: center;
   align-items: center;
+
+  margin-top: 18%;
 }
 body:nth-child(n) {
   display: block;
@@ -47,4 +49,60 @@ h1 {
 .bgImage_animation {
   animation: fadeIn 0.3s linear;
   display: block;
+}
+.js-clock {
+  font-size: 30px;
+}
+input {
+  border: none;
+  padding: 10px;
+  width: 35%;
+  background-color: transparent;
+  border-bottom: 1px solid black;
+  margin-bottom: 15px;
+}
+input:focus {
+  outline: none;
+  animation: focusing 0.2s linear forwards;
+}
+@keyframes focusing {
+  0% {
+    opacity: 0.1;
+    border-color: antiquewhite;
+  }
+  100% {
+    border-color: cornsilk;
+    opacity: 1;
+  }
+}
+ul {
+  transform: translateX(70%);
+  display: flex;
+  width: 35%;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+li {
+  width: 100%;
+  display: flex;
+  list-style: none;
+  justify-content: center;
+}
+button {
+  border-radius: 20%;
+  border: none;
+  background-color: transparent;
+  color: white;
+}
+.text {
+  display: inline-block;
+  width: 100%;
+}
+
+.js-weather {
+  position: fixed;
+  right: 15px;
+  top: 10px;
+  color: #2d3436;
 }
