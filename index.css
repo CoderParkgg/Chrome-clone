@@ -86,6 +86,7 @@ ul {
   align-items: center;
   flex-wrap: wrap;
 }
+
 li {
   width: 100%;
   display: flex;
