@@ -4,7 +4,7 @@ greeting = document.querySelector(".js-greetings");
 //querySelector은 나오는 첫번째 것을 가리킴.
 //querySelectorAll은 같은 요소 모두를 가리킴. 
 
-const USER_LS = "currnetUser",
+const USER_LS = "currentUser",
 SHOWING_CN = "showing";
 
 function saveName(name){
