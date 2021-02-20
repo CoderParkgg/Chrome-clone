@@ -4,14 +4,14 @@ const COORDS = "coords";
 
 function getWeather(lat, lng){
     fetch(
-        `api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${API_KEY}&units=metric`
+        `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${API_KEY}&units=metric`
     ).then(function(response){
         return response.json(); //가져온 데이터를 처리 (준비) 이부분은 다음 강좌에서
     }).then(function(json){
         console.log(json);
       const temperature = json.main.temp;
       const place = json.name;
-      weather.innerHTML = `${temperature} | ${place}`
+      weather.innerHTML = `${temperature} °C | ${place}`
     })
 }
 //api 사이트에서 이처럼 정보를 주는 사이트 주소를 준다. 이것을 fetch함수에 넣어서 사용한다. 
@@ -26,7 +26,8 @@ function saveCoords(coordsObj){
 }
 
 function handleGeoSuccess(position){
-    //console.log(position) : 콘솔창에 사용자의 위치정보가 나타난다. 
+    console.log(position); //: 콘솔창에 사용자의 위치정보가 나타난다. 
+    console.log("Hi");
     const latitude = position.coords.latitude; //위도의 정보를 저장한다.
     const longitude = position.coords.longitude; //경도 정보를 저장한다.
     const coordsObj = {
@@ -35,6 +36,7 @@ function handleGeoSuccess(position){
     };
     saveCoords(coordsObj);
     getWeather(latitude, longitude);
+    
 }
 
 function handleGeoError(){
@@ -45,7 +47,8 @@ function askForCoords(){
     navigator.geolocation.getCurrentPosition(handleGeoSuccess, handleGeoError);
     //navigator처음으로 나옴. 
     //geolocation.getCurrentPosition은 사용자의 위치를 가져온다. 가져오기 전에 사용자에게 위치정보 이용 동의를 구하는데 동의했을 때, 안했을 때 함수를 실행할 수 있다.
-    //argument로 2개의 함수 이름을 받으며 성공하면 첫번 째, 실패하면 2번째 함수를 실행한다.
+    //argument로 2개의 함수 이름을 받으며 성공하면 첫번째, 실패하면 2번째 함수를 실행한다.
+    //getCurrnetPosition은 기다리는 시간이 무한으로 설정되어 있기 때문에 오류가 나도 기다리기만 한다. 이것을 방지하기 위해 뒤에 제한시간을 걸어놓았다.시간이 지나면 에러가 발생한다.
 }
 
 function loadCoords(){
